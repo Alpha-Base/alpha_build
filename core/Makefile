@@ -1611,7 +1611,7 @@ $(INTERNAL_OTA_PACKAGE_TARGET): $(BUILT_TARGET_FILES_PACKAGE) $(DISTTOOLS)
 	   $(if $(OEM_OTA_CONFIG), -o $(OEM_OTA_CONFIG)) \
 	   $(BUILT_TARGET_FILES_PACKAGE) $@
 
-CUSTOM_TARGET_PACKAGE := $(PRODUCT_OUT)/Solo-$(ROM_VERSION).zip
+CUSTOM_TARGET_PACKAGE := $(PRODUCT_OUT)/Tuesday-Rom-$(ROM_VERSION).zip
 
 .PHONY: otapackage bacon
 otapackage: $(INTERNAL_OTA_PACKAGE_TARGET)
@@ -1619,18 +1619,18 @@ bacon: otapackage
 	$(hide) ln -f $(INTERNAL_OTA_PACKAGE_TARGET) $(CUSTOM_TARGET_PACKAGE)
 	$(hide) $(MD5SUM) $(CUSTOM_TARGET_PACKAGE) > $(CUSTOM_TARGET_PACKAGE).md5sum
 	@echo -e ""
-	@echo -e "${cya}Building ${bldcya}Solo ${txtrst}";
+	@echo -e "${cya}Building ${bldcya}Tuesday ${txtrst}";
 	@echo -e ""
-	@echo -e ${CL_CYN}"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+	@echo -e ${CL_CYN}"=========================================="
+	@echo -e ${CL_MAG}"         ________________________         "
 	@echo -e ${CL_MAG}"                                          "
-	@echo -e ${CL_MAG}"      ________           __               "
-	@echo -e ${CL_MAG}"     |   ___  |         |  |              "
-	@echo -e ${CL_MAG}"     |  /___\_|  _____  |  |  _____       "
-	@echo -e ${CL_MAG}"     |____   \  /     \ |  | /     \      "
-	@echo -e ${CL_MAG}"          |  |  |  |  | |  | |  |  |      "
-	@echo -e ${CL_MAG}"     |\___/  |  |  |  | |  | |  |  |      "
-	@echo -e ${CL_MAG}"     |_______/  \_____/ |__| \_____/      "
-	@echo -e ${CL_CYN}"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+	@echo -e ${CL_MAG}"--------       TUESDAY-ROM       -------- "
+	@echo -e ${CL_MAG}"         ________________________         "
+	@echo -e ${CL_MAG}"                     _       _ _   _   _  "
+	@echo -e ${CL_MAG}"   _       _       _| |    _| | | | |_| | "
+	@echo -e ${CL_MAG}" _| |  _  | |_   _| | |_  | | | | | | | |_"
+	@echo -e ${CL_MAG}"| | | | |_| | |_| | | | |_| | | |_| | | | "
+	@echo -e ${CL_CYN}"|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_"
 	@echo -e ""
 	@echo -e ${CL_CYN}"zip: "${CL_MAG} $(CUSTOM_TARGET_PACKAGE)${CL_RST}
 	@echo -e ${CL_CYN}"md5: "${CL_MAG}" `cat $(CUSTOM_TARGET_PACKAGE).md5sum | cut -d ' ' -f 1`"${CL_RST}
